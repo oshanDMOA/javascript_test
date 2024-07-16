@@ -1,0 +1,169 @@
+// while loop
+// while(true){
+//     // code
+// }
+let number = 2;
+
+// while (number < 0){
+//     console.log(number);
+//     number++;
+// }
+
+// do{
+//     console.log(number);
+// }while (number < 0);
+//
+
+// for(initialization ; condition ; increment / decrement){
+//
+// }
+
+// for(let i = 1; i <= 20 ; i++){
+//     console.log(`YOUR NUMBER ${i}`);
+// }
+
+// for(variable in object){
+//
+// }
+
+
+let person = {
+    name : "Dhanushka",
+    age : 28,
+    city: "Galle",
+    position : "ABCD"
+};
+
+// iterate over the object
+for(let key in person){
+    console.log(`${key} :::: ${person[key]}`);
+}
+//
+// for(variable of array | iteratble ){
+//
+// }
+//
+
+// const customerNameList = ["Shanak", "Mendis", "Wanidu", "Mahela"];
+//
+// for(let customerName of customerNameList){
+//     console.log(customerName);
+// }
+
+
+const customerNameList = ["Shanak", "Mendis", "Wanidu", "Mahela"];
+
+// customerNameList.forEach((value,index, array)=>{
+//     console.log(`${index} --> ${value} -->${array}`);
+// })
+// let map = customerNameList.map(function (value, index) {
+//     return value + " CRICKERTER";
+// });
+//
+// console.log(map)
+
+const employeeSalaryList = [25000, 15000, 45000, 30000, 20000];
+
+let salaryMap = employeeSalaryList.map(function (value, index) {
+    return  value >= 30000 ? value.toString().concat(" is Eligible for increment.") : value.toString().concat(" is Not Eligible for increment.");
+});
+
+console.log(salaryMap)
+console.log(employeeSalaryList)
+
+//
+// // Functions / Methods
+
+// declaration
+// function functionName(parameter1, parameter2 ) {
+//     // code block
+// }
+//
+// // Calling function
+// functionName("Name", "Address");
+
+
+// function greet(name) {
+//     // code block
+//     console.log(`Hello ${name} !`);
+// }
+//
+// // Calling function
+// greet("Nimal");
+// greet("Dhanushka");
+// greet("Kamal");
+
+
+// function multiply(number1, number2){
+//     let multiply = number1 * number2;
+//     return multiply;
+// }
+//
+// let result = multiply(5, 6);
+// console.log(result);
+
+// Function Expressions
+
+// Anoymous Function Expression
+let greetFunctionAno = function(name) {
+    console.log(`Welcome ${name} !`);
+}
+
+// Named Function Expression
+
+let greetFunctionNam = function greet(name) {
+    console.log(`Hello ${name} !`);
+}
+
+greetFunctionNam("Club Wasantha.!");
+
+greetFunctionAno("K. Sujeewa")
+
+
+// Arrow Functions Since ES6 in JavaScript
+
+// function welcomeMessage(location) {
+//     // code block
+//     console.log(`Welcome to the ${location} !`);
+// }
+
+// arrow functions declaration
+let welcomeMessage = (location)=> {
+    console.log(`Welcome to the ${location} !`);
+}
+
+// function call
+welcomeMessage("Sri Lanka");
+
+// Higher Order Function
+
+function testHOF(number1, number2, operation){
+    return operation(number1,number2);
+}
+
+function addition(num1 , num2){
+    return num1  + num2;
+}
+
+function substraction(num1 , num2){
+    return num1  - num2;
+}
+
+
+let result = testHOF(41 ,3.2 ,addition);
+let result2 = testHOF(41 ,3.2 ,substraction);
+
+console.log(result);
+console.log(result2);
+
+
+// Function Scope
+function functionScope() {
+    // code block
+    let localVariable = "LOCAL_VARIABLE"
+    console.log(`${localVariable} is Only visible inside this functionScope !`);
+}
+functionScope();
+
+console.log(`${localVariable} is Only visible inside this functionScope !`);
+

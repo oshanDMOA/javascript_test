@@ -1,0 +1,186 @@
+
+
+Object Literals
+
+
+let person = {
+
+    key: value,
+    key: value,
+    key: [],
+    key: [{
+        key: value,
+        key: value,
+        key: value
+    }, {}],
+};
+
+let person = {
+    name: "Mahinda.",
+    age: 30,
+    isStudent: true,
+    greet: function (){
+        console.log("Hello");
+    }
+};
+
+console.log(person.name);
+console.log(person['age']);
+console.log(person.isStudent);
+
+person.greet();
+
+person.address = "Colombo";
+
+console.log(person.address);
+person.age = 85;
+console.log(person.age);
+
+person.greeting = function (){
+    console.log("New Function.")
+}
+
+person.greeting();
+
+
+
+// let person = {
+//     name: "Mahinda.",
+//     age: 30,
+//     isStudent: true,
+//     greet: function (){
+//         console.log("Hello");
+//     }
+// };
+// Constructor function
+function Person(name, age,isStudent){
+    this.name = name;
+    this.age = age;
+    this.isJuniorStudent = isStudent;
+
+    this.greet =  function (){
+        if(this.isJuniorStudent){
+            console.log(`Hello ${this.name}. Your age is ${this.age}.You are still a student.`);
+        }else{
+            console.log(`Hello ${this.name}. Your age is ${this.age}.You are not a student.`);
+        }
+    }
+
+}
+
+const person1 = new Person("Nimal",25,true);
+let person2 = new Person("Wasantha",55,false);
+
+// console.log(person1.name);
+person1.greet();
+person2.greet();
+
+person1.location = "Galle";
+console.log(person1.location);
+
+person1.name = "new Name";
+console.log(person1.name);
+
+// person1 = "Dhanushla";
+
+console.log(person1);
+
+
+
+// Nested Objects
+let person = {
+    name: "Mahinda.",
+    age: 30,
+    isStudent: true,
+    greet: function (){
+        console.log("Hello");
+    },
+    position:{
+        name: "President",
+        experience:  25,
+        isMarried: true,
+        electionDetails:{
+            time: 10,
+            votes: 6900000
+        }
+    }
+};
+
+console.log(person.position.name)
+console.log(person.position.experience)
+console.log(person.position.isMarried)
+
+
+console.log("Times:" , person.position.electionDetails.time)
+console.log("Taken votes: ",person.position.electionDetails.votes)
+
+console.log(person);
+
+
+
+// prototypes in JS
+let person = {
+    name: "Kaveesha.",
+    age: 30,
+    isStudent: true,
+    greet: function (){
+        console.log("Hello " + this.name);
+    }
+};
+
+console.log(person.name)
+
+let student = {
+    major: 'computer science'
+};
+
+Object.setPrototypeOf(student,person);
+
+console.log(student);
+console.log(student.name);
+console.log(student.major);
+
+student.greet();
+
+// Classes ECMAScript 6
+
+class Car {
+
+    constructor(brand, model, color, topSpeed) {
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+        this.topSpeed = topSpeed;
+    }
+
+    drive() {
+        console.log(`I am driving a ${this.brand} ${this.model}.
+        my car color is ${this.color} and also have top speed ${this.topSpeed} KMPH`)
+    }
+
+}
+
+// const myCar1 = new Car("Honda", "Civic", "Metal Black", 300);
+// const myCar2 = new Car("Toyota", "Aqua", "Blue", 250);
+//
+// myCar1.drive();
+// myCar2.drive();
+
+class ElectricCar extends Car {
+
+    constructor(brand, model, color, speed, type, batteryCapacity) {
+        super(brand,model,color,speed);
+        this.type = type;
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    charge(){
+        return `${this.brand} is charging now.`;
+    }
+}
+
+const electricCar = new ElectricCar("Tesla", "Model S" ,"black", 500, "Hybrid","100 Kwh");
+electricCar.drive();
+
+console.log(electricCar.charge());
+

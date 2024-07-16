@@ -1,0 +1,218 @@
+
+// Variables in JS
+// var , let , const
+var variableName = "VAR_VALUE";
+let variableName2 = "LET_VALUE";
+const variableName3 = "CONST_VALUE";
+
+function functionName() {
+    console.log("Function Scope :" + variableName);
+    variableName = "FUNCTION_SCOPE";
+    console.log("Function Scope :" + variableName);
+    var variableName = "22 VAR_VALUE";
+    console.log("Function Scope :" + variableName);
+}
+
+console.log("Global Scope :" + variableName);
+
+functionName();
+
+console.log("Global Scope :" + variableName);
+
+
+function functionLet() {
+    console.log("functionLet :" + variableName2);
+
+    variableName2 = "FUNCTION_SCOPE";
+
+    console.log("functionLet :" + variableName2);
+
+    let variable2 = "REDECLARE LET_VALUE";
+
+    console.log("functionLet :" + variableName2);
+}
+
+functionLet();
+
+console.log("Global Scope : :" + variableName2);
+
+// variableName3 = "RE CONST VALUE";
+//
+// console.log("CONST VALUE:" + variableName3);
+
+
+// DataTypes
+
+// String
+// Number
+// Boolean
+// Object
+// Array
+
+// string
+// let greeting = "Hello World!";
+// typeof greeting;
+// let greeting1 = 'Hello World!';
+// let greeting2 = `Hello World!`;
+
+
+// let number = 33;
+// typeof number;
+// 'number'
+// let number2 = 35.65;
+// typeof number2;
+// 'number'
+
+// Boolean
+// let bool2 = true;
+// 'boolean'
+
+let person = {
+  name : "Dhanushka",
+  age : 28
+};
+
+typeof person
+'object'
+
+let colours = ["red","green","blue", 5 , 254 , true];
+typeof colours;
+'object'
+
+
+
+// Operators
+
+// 1.Arithmatic operators
+// 2.Comparison operators
+// 3.Logical Operators
+
+let a = 10;
+let b = 2 ;
+
+// let sum = a + b;
+// console.log(sum);
+
+// let difference = a - b;
+// console.log(difference);
+
+// let division = a / b;
+// console.log(division);
+
+// let multiply = a * b;
+// console.log(multiply);
+
+// let remainder = a % b;
+// console.log(remainder);
+
+// ------------------------------
+         // 10 , 2
+console.log(a == b); //false
+console.log(a != b); //true
+console.log(a > b);  //true
+console.log(a < b);  //false
+console.log(a <= b); //false
+console.log(a >= b); //true
+
+// ---------------------------------
+
+let isSunnyDay = true;
+let isRainyDay = false;
+
+console.log(isSunnyDay && isRainyDay); //false
+console.log(isSunnyDay || isRainyDay); //true
+console.log(!isSunnyDay); //false
+
+
+
+// Control flow
+
+// if-else statements
+
+// if(condition){
+//     // condition is true
+// }else{
+//     // condition is false
+// }
+//
+// // if ladder
+// if(condition){
+//     // condition is true
+// }else if(condition2){
+//     // condition2 is true
+// }else if(condition3){
+//     // condition3 is true
+// }else{
+//     // all mention conditions is false
+// }
+
+
+let isCustomer = false;
+let isTrust = true;
+let isNative = true;
+
+if(isCustomer){
+    console.log("He is a customer");
+}else{
+    console.log("He is not a customer.");
+}
+
+
+if(isCustomer){
+    console.log("He is a customer.");
+}else if(isTrust){
+    console.log("He is an honest man.");
+}else if(isNative){
+    console.log("He is a Sri lankan.");
+}else{
+    // all mention conditions is false
+    console.log("Don't Trust him.");
+}
+
+// switch statements
+
+// switch (expression){
+//
+//     case value1:
+//         // this code block execute
+//         break;
+//     case value2:
+//         // this code block execute
+//         break;
+//     case value3:
+//         // this code block execute
+//         break;
+//     default :
+//     // this code block execute as default
+//
+//
+//
+// }
+
+let today = "saturday".toUpperCase();
+
+switch (today){
+
+    case "MONDAY":
+        // this code block execute
+        console.log("TODAY IS MONDAY");
+        break;
+    case "TUESDAY":
+        // this code block execute
+        console.log("TODAY IS TUESDAY");
+        break;
+    case "SATURDAY":
+        // this code block execute
+        console.log("TODAY IS SATURDAY");
+        break;
+    default :
+    // this code block execute as default
+        console.log("TODAY IS NOT MY DAY.");
+}
+
+
+
+
+
+
+
